@@ -25,11 +25,11 @@ cp build/libs/$RELEASE ./docker'''
 
     stage('Packaging') {
       steps {
-        pwd
+        sh '''pwd
         cd ./docker
         docker build -t hugoaquinonavarrete/webapp1-2021:$BUILD_ID
         docker tag hugoaquinonavarrete/webapp1-2021:$BUILD_ID hugoaquinonavarrete/webapp1-2021:latest
-        docker images
+        docker images'''
       }
   }
 
