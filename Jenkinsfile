@@ -25,21 +25,21 @@ cp build/libs/$RELEASE ./docker'''
 
     stage('Packaging') {
       steps {
-          script{
-             docker.withRegistry("https://index.docker.io/v1/","dockerlogin"){
-             def workerImage = docker.build("hugoaquinonavarrete/webapp:v${env.BUILD_ID}",".")
-             workerImage.push()
-             workerImage.push("${env.BRANCH_NAME}")
-          }
-      }
+//          script{
+//             docker.withRegistry("https://index.docker.io/v1/","dockerlogin"){
+//             def workerImage = docker.build("hugoaquinonavarrete/webapp:v${env.BUILD_ID}",".")
+//             workerImage.push()
+//             workerImage.push("${env.BRANCH_NAME}")
+//          }
+//      }
 
 
 
-//        sh '''pwd
-//        cd ./docker
-//        docker build -t hugoaquinonavarrete/webapp1-2021:$BUILD_ID
-//        docker tag hugoaquinonavarrete/webapp1-2021:$BUILD_ID hugoaquinonavarrete/webapp1-2021:latest
-//        docker images'''
+        sh '''pwd
+        cd ./docker
+        docker build -t hugoaquinonavarrete/webapp1-2021:$BUILD_ID .
+        docker tag hugoaquinonavarrete/webapp1-2021:$BUILD_ID hugoaquinonavarrete/webapp1-2021:latest
+        docker images'''
     }
   }
 
