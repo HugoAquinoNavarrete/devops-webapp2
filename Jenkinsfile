@@ -15,7 +15,7 @@ echo $PATH
 pwd
 ls -la
 ls -l /var/jenkins_home/*.gz
-./gradlew build --info'''
+/bin/bash gradlew build --info'''
       }
     }
 
