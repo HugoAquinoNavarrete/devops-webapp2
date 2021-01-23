@@ -9,7 +9,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh '''RELEASE=webapp.war
+        sh '''RELEASE=webapp-1.0.war
 pwd
 /bin/bash gradlew build -PwarName=$RELEASE --info
 ls -la build/libs
