@@ -20,13 +20,13 @@ ls -l /var/jenkins_home/*.gz
     }
 
 
-    stage('Build') {
-      sh "${GRADLE_HOME}/bin/gradle build -PwarName=${RELEASENAME} --info"
-    }
+//    stage('Build') {
+//      sh "${GRADLE_HOME}/bin/gradle build -PwarName=${RELEASENAME} --info"
+//    }
 
-    stage('Archive') {
-      archiveArtifacts artifacts: "build/libs/${RELEASENAME}"
-    }
+ //   stage('Archive') {
+   //   archiveArtifacts artifacts: "build/libs/${RELEASENAME}"
+ //   }
 
 
 //    stage('Publish') {
