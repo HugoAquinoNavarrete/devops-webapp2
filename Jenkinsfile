@@ -27,7 +27,7 @@ cp build/libs/$RELEASE ./docker'''
       steps {
           script{
              docker.withRegistry("https://index.docker.io/v1/","dockerlogin"){
-             def workerImage = docker.build("hugoaquinonavarrete/webapp:v${env.BUILD_ID}","./webapp")
+             def workerImage = docker.build("hugoaquinonavarrete/webapp:v${env.BUILD_ID}","webapp")
              workerImage.push()
              workerImage.push("${env.BRANCH_NAME}")
           }
