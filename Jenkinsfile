@@ -19,11 +19,21 @@ ls -l /var/jenkins_home/*.gz
       }
     }
 
-    stage('Publish') {
-      steps {
-        archiveArtifacts(artifacts: 'builds/libs/*.war', fingerprint: true, onlyIfSuccessful: true)
-      }
+
+    stage('Build') {
+      sh "${GRADLE_HOME}/bin/gradle build -PwarName=${RELEASENAME} --info"
     }
+
+    stage('Archive') {
+      archiveArtifacts artifacts: "build/libs/${RELEASENAME}"
+    }
+
+
+//    stage('Publish') {
+//      steps {
+//        archiveArtifacts(artifacts: 'builds/libs/*.war', fingerprint: true, onlyIfSuccessful: true)
+//      }
+//   }
 
   }
 }
