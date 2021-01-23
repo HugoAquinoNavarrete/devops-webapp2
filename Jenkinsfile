@@ -13,7 +13,7 @@ pipeline {
 pwd
 /bin/bash gradlew build -PwarName=$RELEASE --info
 ls -la build/libs
-cp ./build/libs/$RELEASE ./docker'''
+cp build/libs/$RELEASE ./docker'''
       }
     }
 
