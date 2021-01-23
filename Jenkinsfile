@@ -11,7 +11,7 @@ pipeline {
       steps {
         sh '''RELEASE=webapp.war
 pwd
-/bin/bash/ gradlew build -PwarName=$RELEASE --info
+/bin/bash gradlew build -PwarName=$RELEASE --info
 ls -la build/libs
 cp ./build/libs/$RELEASE ./docker'''
       }
