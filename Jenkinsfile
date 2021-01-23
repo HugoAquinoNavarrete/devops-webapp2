@@ -7,7 +7,7 @@ pipeline {
       }
     }
 
-    stage('Build') {
+    stage('Display') {
       steps {
         sh '''whoami
 date
