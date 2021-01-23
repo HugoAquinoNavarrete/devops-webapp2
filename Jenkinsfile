@@ -29,11 +29,11 @@ ls -l /var/jenkins_home/*.gz
  //   }
 
 
-//    stage('Publish') {
-//      steps {
-//        archiveArtifacts(artifacts: 'builds/libs/*.war', fingerprint: true, onlyIfSuccessful: true)
-//      }
-//   }
+    stage('Publish') {
+      steps {
+        archiveArtifacts(artifacts: 'builds/libs/*.war', fingerprint: true, onlyIfSuccessful: true)
+      }
+   }
 
   }
 }
