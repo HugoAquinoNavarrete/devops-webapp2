@@ -23,11 +23,15 @@ cp build/libs/$RELEASE ./docker'''
 //      }
 //  }
 
-//    stage('Packaging') {
-//      steps {
-//        archiveArtifacts(artifacts: 'build/libs/*.war', fingerprint: true, onlyIfSuccessful: true)
-//      }
-//  }
+    stage('Packaging') {
+      steps {
+        pwd
+        cd ./docker
+        docker build -t hugoaquinonavarrete/webapp1-2021:$BUILD_ID
+        docker tag hugoaquinonavarrete/webapp1-2021:$BUILD_ID hugoaquinonavarrete/webapp1-2021:latest
+        docker images
+      }
+  }
 
 
   }
